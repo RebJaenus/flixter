@@ -4,6 +4,11 @@
   <h1 class="text-center"><%= @course.title %></h1>
   <br />
   <div class="row">
+    <% if @course.image.present? %>
+      <div class="col-2">
+        <%= image_tag @course.image.url, class: 'img-fluid' %>
+      </div>
+    <% end %>
     <div class="col-sm-4 col-12 text-center">
       <span class="badge badge-default">
         <%= number_to_currency @course.cost %>
